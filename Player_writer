@@ -1,0 +1,29 @@
+from csv import writer
+
+
+class Player:
+    def __init__(self, nombre, numero):
+        self.name = nombre
+        self.number = numero
+    def mensaje():
+        print("Here Im gonna create a player class")
+        print("Millos tiene un partido myu complicado esta noche en Metrallo")
+
+def equipo():
+    equipo = []
+    n = int(input("How many playersdo you want to create ?"))
+    for player in range(0,n):
+        player = Player(nombre = input("name for player"), numero = input("player number"))
+        equipo.append(player)
+    return equipo
+
+
+e = equipo()
+
+with  open("doc.txt", "w") as file:
+    csv_writer = writer(file)
+    csv_writer.writerow(["Nombre","Numero"])
+    j=0
+    for jugador in e:
+        csv_writer.writerow([e[j].name, e[j].number] )
+        j+=1
